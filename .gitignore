@@ -190,3 +190,21 @@ flycheck_*.el
 #*.dcp (checkpoint files: better be ignored!)
 #!*.dcp
 
+# ... (otras reglas omitidas para mayor claridad)
+
+### Vivado ###
+#########################################################################################################
+##	This is an example .gitignore file for Vivado, please treat it as an example as
+##	it might not be complete. In addition, XAPP 1165 should be followed.
+#########
+#Exclude all
+*
+!*/
+!.gitignore
+
+# ... (otras reglas específicas de Vivado)
+
+# Modificaciones sugeridas:
+# Agregar las siguientes líneas al final del archivo:
+!README.md
+!img/**
