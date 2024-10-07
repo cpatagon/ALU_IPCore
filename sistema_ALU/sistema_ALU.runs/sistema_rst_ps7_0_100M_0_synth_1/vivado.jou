@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.1 (64-bit)
+# SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+# IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+# Start of session at: Sat Oct  5 10:36:24 2024
+# Process ID: 147263
+# Current directory: /home/lgomez/Documentos/MAGISTER_UBA/Bimestre06/MyS_FPGA/laboratorios/TF_ALU_1005A/sistema_ALU/sistema_ALU.runs/sistema_rst_ps7_0_100M_0_synth_1
+# Command line: vivado -log sistema_rst_ps7_0_100M_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sistema_rst_ps7_0_100M_0.tcl
+# Log file: /home/lgomez/Documentos/MAGISTER_UBA/Bimestre06/MyS_FPGA/laboratorios/TF_ALU_1005A/sistema_ALU/sistema_ALU.runs/sistema_rst_ps7_0_100M_0_synth_1/sistema_rst_ps7_0_100M_0.vds
+# Journal file: /home/lgomez/Documentos/MAGISTER_UBA/Bimestre06/MyS_FPGA/laboratorios/TF_ALU_1005A/sistema_ALU/sistema_ALU.runs/sistema_rst_ps7_0_100M_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source sistema_rst_ps7_0_100M_0.tcl -notrace

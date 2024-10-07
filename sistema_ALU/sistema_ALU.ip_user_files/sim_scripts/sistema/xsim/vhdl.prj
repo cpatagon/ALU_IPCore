@@ -1,0 +1,14 @@
+vhdl xil_defaultlib  \
+"../../../bd/sistema/ipshared/f93c/hdl/ALU_ip_v1_0_S_AXI.vhd" \
+"../../../bd/sistema/ipshared/f93c/src/sum1b.vhd" \
+"../../../bd/sistema/ipshared/f93c/src/sumNb.vhd" \
+"../../../bd/sistema/ipshared/f93c/src/subtractor4b.vhd" \
+"../../../bd/sistema/ipshared/f93c/src/multiplier4b.vhd" \
+"../../../bd/sistema/ipshared/f93c/src/divider4b.vhd" \
+"../../../bd/sistema/ipshared/f93c/src/ALU.vhd" \
+"../../../bd/sistema/ipshared/f93c/hdl/ALU_ip_v1_0.vhd" \
+"../../../bd/sistema/ip/sistema_ALU_ip_0_0/sim/sistema_ALU_ip_0_0.vhd" \
+"../../../bd/sistema/ip/sistema_rst_ps7_0_100M_0/sim/sistema_rst_ps7_0_100M_0.vhd" \
+"../../../bd/sistema/sim/sistema.vhd" \
+
+nosort
