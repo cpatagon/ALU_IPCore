@@ -208,3 +208,4 @@ flycheck_*.el
 # Agregar las siguientes líneas al final del archivo:
 !README.md
 !img/**
+!IP_local/**

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>alu-ip-core-presentation.html</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<h1>Implementación de IP Core ALU en Arty Z7</h1>
+
+<h2>1. Introducción</h2>
+
+<ul>
+<li>Objetivo: Crear un IP Core ALU personalizado para la plataforma Zynq</li>
+<li>Plataforma: Arty Z7 (Zynq-7000 SoC)</li>
+</ul>
+
+<h2>2. Arquitectura del Sistema</h2>
+
+<p><code>
++---------------------+        +------------------------+
+|    Zynq PS          |        |     Zynq PL (FPGA)     |
+|  +-------------+    |        |  +------------------+  |
+|  | ARM Cortex  |    |        |  |                  |  |
+|  |    A9       |&lt;---+--------+-&gt;|   ALU IP Core    |  |
+|  |  Processor  |    |  AXI   |  |                  |  |
+|  +-------------+    |        |  +------------------+  |
+|        |            |        |                        |
+|        v            |        |                        |
+|  +-------------+    |        |                        |
+|  |    UART     |    |        |                        |
+|  +-------------+    |        |                        |
++---------------------+        +------------------------+
+</code>
+<img src="img/sistema_con_ALU.png" alt="link text" title="" /></p>
+
+<h2>3. Componentes Principales</h2>
+
+<h3>3.1 IP Core ALU</h3>
+
+<ul>
+<li>Operaciones: Suma, Resta, Multiplicación, División</li>
+<li>Interfaz: AXI4-Lite</li>
+<li>Registros:
+<ul>
+<li>Reg0: Operando A</li>
+<li>Reg1: Operando B</li>
+<li>Reg2: Selector de operación</li>
+<li>Reg3: Resultado</li>
+<li>Reg4: Carry/Overflow</li>
+</ul></li>
+</ul>
+
+<p><img src="img/entity_ALU.png" alt="link text" title="" /></p>
+
+<p><img src="img/resgistros_BUSAXI.png" alt="link text" title="" /></p>
+
+<p><img src="img/funcion_ALU_en_C.png" alt="link text" title="" /></p>
+
+<h3>3.2 Procesador ARM Cortex-A9</h3>
+
+<ul>
+<li>Ejecuta el código C</li>
+<li>Controla la ALU a través de la interfaz AXI</li>
+</ul>
+
+<h3>3.3 UART</h3>
+
+<ul>
+<li>Utilizada para la comunicación con el PC</li>
+</ul>
+
+<h2>4. Flujo de Diseño</h2>
+
+<ol>
+<li>Crear IP Core ALU en VHDL</li>
+<li>Empaquetar IP Core usando Vivado IP Packager</li>
+<li>Integrar IP Core en el diseño de bloques de Vivado</li>
+<li>Generar bitstream</li>
+<li>Exportar hardware al SDK</li>
+<li>Desarrollar aplicación C en SDK</li>
+<li>Programar, compilar y ejecutar código C</li>
+</ol>
+
+<h2>5. Implementación del IP Core ALU</h2>
+
+<p>```vhdl
+entity ALU is
+    Port ( A, B : in STD<em>LOGIC</em>VECTOR(3 downto 0);
+           ALU<em>Sel : in STD</em>LOGIC<em>VECTOR(1 downto 0);
+           Result : out STD</em>LOGIC<em>VECTOR(7 downto 0);
+           CarryOut : out STD</em>LOGIC);
+end ALU;</p>
+
+<p>architecture Behavioral of ALU is
+    -- Implementación de las operaciones
+end Behavioral;
+```</p>
+
+<h2>6. Código C de Control</h2>
+
+<p>```c</p>
+
+<h1>include "xparameters.h"</h1>
+
+<h1>include "xil_io.h"</h1>
+
+<h1>include "ALU_ip.h"</h1>
+
+<h1>include <stdio.h></h1>
+
+<p>int main() {
+    uint8<em>t opA = 3, opB = 2, select = 0;
+    uint32</em>t result;</p>
+
+<pre><code>// Escribir operandos y selector
+ALU_IP_mWriteReg(XPAR_ALU_IP_0_S_AXI_BASEADDR, ALU_IP_S_AXI_SLV_REG0_OFFSET, opA);
+ALU_IP_mWriteReg(XPAR_ALU_IP_0_S_AXI_BASEADDR, ALU_IP_S_AXI_SLV_REG1_OFFSET, opB);
+ALU_IP_mWriteReg(XPAR_ALU_IP_0_S_AXI_BASEADDR, ALU_IP_S_AXI_SLV_REG2_OFFSET, select);
+
+// Leer resultado
+result = ALU_IP_mReadReg(XPAR_ALU_IP_0_S_AXI_BASEADDR, ALU_IP_S_AXI_SLV_REG3_OFFSET);
+
+printf("Resultado: %d\n", result);
+
+return 0;
+</code></pre>
+
+<p>}
+```</p>
+
+<h2>7. Resultados y Verificación</h2>
+
+<ul>
+<li>Capturas de pantalla UART</li>
+</ul>
+
+<p><img src="img/salida_uart.png" alt="link text" title="" /></p>
+
+<h2>8. Conclusiones</h2>
+
+<ul>
+<li>Resumen de la implementación</li>
+<li>Desafíos encontrados</li>
+<li>Posibles mejoras futuras</li>
+</ul>
+
+<p>Implementar </p>
+
+</body>
+</html>
