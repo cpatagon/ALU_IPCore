@@ -89,6 +89,9 @@ end Behavioral;
 - Módulo que implementa la lógica de interfaz AXI, y un ejemplo de diseño para
 escribir hacia y leer desde un número de registros especificados arriba. Esta plantilla mostrada en la figura es usada como base para crear la IP personalizada.
 
+
+![link text](img/instancia_busAXI.png)
+
 ![Registros Bus AXI](img/resgistros_BUSAXI.png)
 
 
@@ -102,8 +105,11 @@ escribir hacia y leer desde un número de registros especificados arriba. Esta p
 
 ![Sistema con ALU](img/sistema_con_ALU.png)
 
+
 - Generar las salidas de IP Integrator, el HDL top-level, y ejecutar el SDK
 exportando el hardware.
+
+![Sistema Implementado](img/estructura_implementacion.png)
 
 ## 6. Desarrollo de Software en SDK
 
