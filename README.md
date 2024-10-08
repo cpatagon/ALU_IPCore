@@ -84,18 +84,30 @@ end Behavioral;
 ![Entidad ALU](img/entity_ALU.png)
 
 
-### 5.2 Integración en Vivado
+### 5.2 Integración del IP Core
+
+- Módulo que implementa la lógica de interfaz AXI, y un ejemplo de diseño para
+escribir hacia y leer desde un número de registros especificados arriba. Esta plantilla mostrada en la figura es usada como base para crear la IP personalizada.
 
 ![Registros Bus AXI](img/resgistros_BUSAXI.png)
+
+
+- Implementación de la ALU como un IP Core
 
 ![ALU IP en Vivado](img/ALU_ip.png)
 
 ### 5.3 Sistema Completo
+
+-  Sistema de procesamiento con el agregado de la IP propia
+
 ![Sistema con ALU](img/sistema_con_ALU.png)
 
-## 6. Desarrollo de Software
+- Generar las salidas de IP Integrator, el HDL top-level, y ejecutar el SDK
+exportando el hardware.
 
-### 6.1 Código C de Control
+## 6. Desarrollo de Software en SDK
+
+### 6.1 Ejemplo de código C de Control
 ```c
 void ALU(uint8_t opA, uint8_t opB, uint8_t select) {
     uint32_t res;
