@@ -34,8 +34,6 @@
   - Reg3: Resultado
   - Reg4: Carry/Overflow
 
-![Entidad ALU](img/entity_ALU.png)
-![Registros Bus AXI](img/resgistros_BUSAXI.png)
 
 ### 3.2 Procesador ARM Cortex-A9
 - Ejecuta el código C
@@ -83,7 +81,13 @@ architecture Behavioral of ALU is
 end Behavioral;
 ```
 
+![Entidad ALU](img/entity_ALU.png)
+
+
 ### 5.2 Integración en Vivado
+
+![Registros Bus AXI](img/resgistros_BUSAXI.png)
+
 ![ALU IP en Vivado](img/ALU_ip.png)
 
 ### 5.3 Sistema Completo
