@@ -113,6 +113,8 @@ exportando el hardware.
 
 ## 6. Desarrollo de Software en SDK
 
+![SDK](img/ALU_SDK.png)
+
 ### 6.1 Ejemplo de código C de Control
 ```c
 void ALU(uint8_t opA, uint8_t opB, uint8_t select) {
